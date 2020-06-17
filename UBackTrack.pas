@@ -59,14 +59,13 @@ var
   procedure TryPut (i : integer);
   var j : integer;
   begin
-    if (CheckRing) then
-      begin
-        if (MaxCount < Count) then
-          begin
-            MaxCount := Count;
-            MaxRing := Ring;
-          end;
-      end;
+    if (CheckRing) then begin
+      if (MaxCount < Count) then
+        begin
+          MaxCount := Count;
+          MaxRing := Ring;
+        end;
+    end;
     if (i <= len) then
       begin
         used[i] := true;

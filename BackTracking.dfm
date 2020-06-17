@@ -1,8 +1,8 @@
 object Form1: TForm1
-  Left = 216
-  Top = 155
+  Left = 1081
+  Top = 269
   Width = 324
-  Height = 405
+  Height = 403
   Caption = 'BachTracking'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -40,7 +40,7 @@ object Form1: TForm1
     Width = 145
     Height = 33
     Caption = #1047#1072#1076#1072#1095#1072
-    TabOrder = 1
+    TabOrder = 0
     OnClick = ButtonTaskClick
   end
   object MemoOutput: TMemo
@@ -49,14 +49,14 @@ object Form1: TForm1
     Width = 145
     Height = 273
     ReadOnly = True
-    TabOrder = 2
+    TabOrder = 1
   end
-  object MemoInput: TMemo
+  object MemoInput: TEdit
     Left = 8
     Top = 40
     Width = 145
     Height = 273
-    TabOrder = 0
+    TabOrder = 2
   end
   object OpenDialog1: TOpenDialog
     Left = 280

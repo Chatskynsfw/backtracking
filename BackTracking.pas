@@ -11,10 +11,10 @@ type
     ButtonTask: TButton;
     OpenDialog1: TOpenDialog;
     MemoOutput: TMemo;
-    MemoInput: TMemo;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
+    MemoInput: TEdit;
     procedure ButtonTaskClick(Sender: TObject);
   private
     { Private declarations }
@@ -29,17 +29,36 @@ implementation
 
 {$R *.dfm}
 
+function GetNextWord(input : string; var word : string; var n : integer):boolean;
+var len : integer;
+begin
+  len := length(input);
+  word := '';
+  while (n <= len) and (input[n] <> ' ') do
+    begin
+      word := word + input[n];
+      inc(n);
+    end;
+  while (n <= len) and (input[n] = ' ') do
+    inc(n);
+  result := word <> '';
+end;
+
 procedure TForm1.ButtonTaskClick(Sender: TObject);
 var ring : TRing;
   maxring : Tring;
   maxcount : integer;
-  i,count:integer;
+  i,n,count : integer;
+  input, word : string;
 begin
-  count := MemoInput.Lines.Count;
-  for i := 1 to count do
+  count := 0;
+  input := Trim(MemoInput.Text);
+  n := 1;
+  while GetNextWord(input, word, n) do
     begin
-      ring[i] := AnsiLowerCase(MemoInput.Lines[i - 1]);
-    end;
+      inc(count);
+      ring[count] := AnsiUpperCase(word);
+    end;               
   maxcount := 0;
   Solve(ring, count, maxcount, maxring);
   Label3.Caption := 'Максимальная длина: ' + inttostr(maxCount);

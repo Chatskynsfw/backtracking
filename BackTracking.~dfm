@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 216
-  Top = 155
+  Left = 930
+  Top = 222
   Width = 324
   Height = 405
   Caption = 'BachTracking'
@@ -40,7 +40,7 @@ object Form1: TForm1
     Width = 145
     Height = 33
     Caption = #1047#1072#1076#1072#1095#1072
-    TabOrder = 1
+    TabOrder = 0
     OnClick = ButtonTaskClick
   end
   object MemoOutput: TMemo
@@ -49,14 +49,14 @@ object Form1: TForm1
     Width = 145
     Height = 273
     ReadOnly = True
-    TabOrder = 2
+    TabOrder = 1
   end
-  object MemoInput: TMemo
+  object MemoInput: TEdit
     Left = 8
     Top = 40
     Width = 145
-    Height = 273
-    TabOrder = 0
+    Height = 21
+    TabOrder = 2
   end
   object OpenDialog1: TOpenDialog
     Left = 280
